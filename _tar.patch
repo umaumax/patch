@@ -1,0 +1,13 @@
+diff --git a/_tar b/_tar
+index 727fbd6..8306dc3 100644
+--- a/_tar
++++ b/_tar
+@@ -22,7 +22,7 @@ local _tar_cmd tf tmp tmpb del index
+ # that does not start with a hyphen.
+ 
+ if _pick_variant gnu=GNU libarchive=libarchive unix --version; then
+-  case "$($service --version)" in
++  case "$($service --version 2>&1)" in
+     ("tar (GNU tar) "(#b)([0-9.-]##)*)
+     autoload -z is-at-least
+     is-at-least 1.14.91 "$match[1]" || _cmd_variant[$service]="gnu-old"
